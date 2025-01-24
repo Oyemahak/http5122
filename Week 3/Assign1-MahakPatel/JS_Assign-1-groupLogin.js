@@ -25,11 +25,11 @@ if (isNaN(userInputTeamNumber)) {
         case "Rutul":
             alert(`Welcome, ${teamMembers["Rutul"]}!`);
             break;
-        case "John":
-            alert(`Welcome, ${teamMembers["John"]}!`);
+        case "Smit":
+            alert(`Welcome, ${teamMembers["Smit"]}!`);
             break;
-        case "Mahak":
-            alert(`Welcome, ${teamMembers["Mahak"]}!`);
+        case "Samay":
+            alert(`Welcome, ${teamMembers["Samay"]}!`);
             break;
         default:
             alert("Access denied!");
