@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Forms</title>
+<style>#thanks_msg{display: none;}#thanksSpeed, #thanksPC{color:green;font-size:2em;}</style>
+	<script src="Lab-7-forms.js"></script> 
+</head>
+<body>
+<h1>Shopping Cart</h1>
+
+<!--#### SHIPPING FORM ####-->
+<form action="#" method="post" id="shippingForm" name="form_ship">
+<fieldset>
+	<legend>Please complete your shipping preferences - Note that all fields are required</legend>
+
+    SPEED OF DELIVERY
+	<p><label for="in_Speed">Select your speed of delivery</label>
+		<select id="in_Speed" name="f_speed">
+		  <option value="0">===SELECT===</option>
+		  <option value="8">Regular Delivery</option>
+		  <option value="20">Express Delivery</option>
+		  <option value="100">Next Day Delivery</option>
+		</select>
+	</p>
+
+<!--USER INFORMATION-->
+	<fieldset>
+		<legend>Your Information</legend>
+
+		<!-- NAME -->
+		<p><label for="in_Name">Your Name:</label>
+		<input type="text" id="in_Name" name="f_Name" /></p>
+
+
+		<!-- POSTAL CODE -->
+		<p><label for="in_pc">Postal Code:</label>
+		<input type="text" id="in_pc" name="f_pc" />&nbsp;&nbsp;(Canada Only)</p>
+	</fieldset>
+ 
+<!-- SUBMIT -->
+	<p>
+		<input type="submit" value="Complete your purchase" name="submit" />
+	</p>
+
+</fieldset>
+</form>
+
+
+<!--#### OUTPUT MESSAGE (HIDDEN UNTIL FORM VALIDATES) #### -->
+<div id="thanks_msg">
+	<h2>Thank you <span id="thanksCustomer"></span> for your purchase!</h2>
+	<div>
+		<p>Your package will be sent 
+by <span id="thanksSpeed"></span>
+		to <span id="thanksPC">you</span>.</p>
+<p>The cost of shipping will be $<span id="thanksCost"></span>.</p>	
+	</div>
+</div>
+
+
+</body>
+</html>
