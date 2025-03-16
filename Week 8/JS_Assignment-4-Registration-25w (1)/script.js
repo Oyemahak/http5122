@@ -1,79 +1,89 @@
-// JavaScript for handling the registration form
+window.onload = function () {
+    // Access the form using its name attribute
+    var formHandle = document.forms.ixdForm;
 
-// Prevent form submission and handle form validation
-document.forms['ixdForm'].onsubmit = function(event) {
-    event.preventDefault(); // Prevent the form from submitting
+    // Access the result message div and its components
+    var resultMssg = document.getElementById("result");
+    var resultFname = document.getElementById("result__Fname");
+    var resultLname = document.getElementById("result__Lname");
+    var resultID = document.getElementById("result__id");
+    var resultProgram = document.getElementById("result__program");
+    var resultProject = document.getElementById("result__project");
 
-    // Get form elements
-    var formHandle = document.forms['ixdForm'];
-    var firstName = formHandle.f__fName.value.trim();
-    var lastName = formHandle.f__lName.value.trim();
-    var humberID = formHandle.f__id.value.trim();
-    var program = formHandle.f__program.value;
-    var project = formHandle.f__project.value;
+    // ONSUBMIT EVENT
+    formHandle.onsubmit = processForm;
 
-    // Validation flags
-    var isValid = true;
+    function processForm() {
+        // Get form input values
+        var firstNameField = formHandle.f__fName;
+        var lastNameField = formHandle.f__lName;
+        var humberIDField = formHandle.f__id;
+        var programField = formHandle.f__program;
+        var projectField = formHandle.f__project;
 
-    // Validate First Name
-    if (firstName === "") {
-        formHandle.f__fName.style.backgroundColor = "red";
-        formHandle.f__fName.focus();
-        isValid = false;
-    } else {
-        formHandle.f__fName.style.backgroundColor = "";
-    }
+        // Validation flag
+        var isValid = true;
 
-    // Validate Last Name
-    if (lastName === "") {
-        formHandle.f__lName.style.backgroundColor = "red";
-        formHandle.f__lName.focus();
-        isValid = false;
-    } else {
-        formHandle.f__lName.style.backgroundColor = "";
-    }
+        // Conditions for First Name field
+        if (firstNameField.value === "") {
+            firstNameField.style.backgroundColor = "Red";
+            firstNameField.focus();
+            isValid = false;
+        } else {
+            firstNameField.style.backgroundColor = "";
+        }
 
-    // Validate Humber ID using regex
-    var humberIDRegex = /^[nN]\d{8}$/;
-    if (!humberIDRegex.test(humberID)) {
-        formHandle.f__id.style.backgroundColor = "red";
-        formHandle.f__id.focus();
-        isValid = false;
-    } else {
-        formHandle.f__id.style.backgroundColor = "";
-    }
+        // Conditions for Last Name field
+        if (lastNameField.value === "") {
+            lastNameField.style.backgroundColor = "Red";
+            lastNameField.focus();
+            isValid = false;
+        } else {
+            lastNameField.style.backgroundColor = "";
+        }
 
-    // Validate Program
-    if (program === "X") {
-        formHandle.f__program.style.backgroundColor = "red";
-        formHandle.f__program.focus();
-        isValid = false;
-    } else {
-        formHandle.f__program.style.backgroundColor = "";
-    }
+        // Conditions for Humber ID field (Regex Validation)
+        var humberIDRegex = /^[nN]\d{8}$/; // Regex for Humber ID
+        if (!humberIDRegex.test(humberIDField.value)) {
+            humberIDField.style.backgroundColor = "Red";
+            humberIDField.focus();
+            isValid = false;
+        } else {
+            humberIDField.style.backgroundColor = "";
+        }
 
-    // Validate Project
-    if (!project) {
-        document.getElementById('caption_project').style.backgroundColor = "red";
-        isValid = false;
-    } else {
-        document.getElementById('caption_project').style.backgroundColor = "";
-    }
+        // Conditions for Program field
+        if (programField.value === "X") {
+            programField.style.backgroundColor = "Red";
+            programField.focus();
+            isValid = false;
+        } else {
+            programField.style.backgroundColor = "";
+        }
 
-    // If all fields are valid, show the confirmation message
-    if (isValid) {
-        // Hide the form and header
-        document.getElementById('welcome').style.display = "none";
-        document.getElementById('form').style.display = "none";
+        // Conditions for Project field (Radio Buttons)
+        if (!projectField.value) {
+            document.getElementById("caption_project").style.backgroundColor = "Red";
+            isValid = false;
+        } else {
+            document.getElementById("caption_project").style.backgroundColor = "";
+        }
 
-        // Show the confirmation message
-        document.getElementById('result').style.display = "block";
+        // If all fields are valid, proceed to show the result message
+        if (isValid) {
+            // Hide form and show result message
+            document.getElementById("welcome").style.display = "none";
+            document.getElementById("form").style.display = "none";
+            resultMssg.style.display = "block";
 
-        // Populate the confirmation message with form values
-        document.getElementById('result__Fname').textContent = firstName;
-        document.getElementById('result__Lname').textContent = lastName;
-        document.getElementById('result__id').textContent = humberID;
-        document.getElementById('result__program').textContent = formHandle.f__program.options[formHandle.f__program.selectedIndex].text;
-        document.getElementById('result__project').textContent = project;
+            // Customize result message with user data
+            resultFname.innerHTML = firstNameField.value;
+            resultLname.innerHTML = lastNameField.value;
+            resultID.innerHTML = humberIDField.value;
+            resultProgram.innerHTML = programField.options[programField.selectedIndex].text;
+            resultProject.innerHTML = projectField.value;
+        }
+
+        return false; // Prevent form submission
     }
 };
