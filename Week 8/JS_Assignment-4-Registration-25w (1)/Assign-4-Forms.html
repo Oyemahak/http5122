@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>B Forms Assignment</title>
+		<style>#result{display:none;} fieldset{margin-bottom: 20px;}#result__Fname,#result__Lname,#result__project{font-size:1.5em;}</style>
+
+	</head>
+	<body>
+<!-- HEADER SECTION -->
+		<header id="welcome">
+			<h1>IXD Studio Sign Up</h1>
+			<p>Complete the following form to register your selection for the IXD Studio Course.</p>
+		</header>
+
+<!-- FORM SECTION -->
+		<section id="form">
+			<form name="ixdForm" action="#" method="POST">
+			
+			<fieldset>
+				<legend>Your Information</legend>
+			<!-- STUDENT NAME -->
+				<label for="in_fName">First Name:</label>
+				<input type="text" name="f__fName" id="in_fName"/>
+				<br/>
+				<label for="in_lName">Last Name:</label>
+				<input type="text" name="f__lName" id="in_lName"/>
+				<br/>
+				
+			<!-- STUDENT NUMBER-->
+				<label for="in_id">Humber ID:</label>
+				<input type="text" name="f__id" id="in_id"/>
+				<br/>
+				
+			<!-- PROGRAM -->
+				<label for="in_program">Humber Program:</label>
+				<select name="f__program" id="in_program">
+					<option value="X">CHOOSE ONE</option>
+					<option value="CS">Content Strategy</option>
+					<option value="CT">Creative Technologies</option>
+					<option value="UX">User Experience Design</option>
+					<option value="WD">Web Development</option>
+				</select>
+				<br/>
+			</fieldset>
+
+
+			<fieldset>
+				<legend>Your Selection</legend>
+			<!-- PROJECT -->
+				<p id="caption_project">Project Selection
+					<br/>
+					<input type="radio" name="f__project" id="in_health" value="Health for All"/>
+					<label for="in_health">Health for All Project</label>
+					<br/>
+
+					<input type="radio" name="f__project" id="in_esport" value="eSports"/>
+					<label for="in_esport">eSports Website Project</label>
+										<br/>
+
+					<input type="radio" name="f__project" id="in_tutorial" value="Gradeschool Tutorial"/>
+					<label for="in_tutorial">Gradeschool Tutorial Project</label>
+				</p>
+			</fieldset>
+			
+			<input type="submit" value="Submit Your Selection" />
+
+			</form>
+		</section>
+		
+		
+<!-- OUTPUT MESSAGE SECTION -->
+		<section id="result">
+			<h2>Thank you! Your Summer 2025 registration is complete.</h2>
+			
+			<p>
+				<span id="result__Fname"></span> <span id="result__Lname"></span> (<span id="result__id"></span> in <span id="result__program"></span>) has been registered for the <span id="result__project"></span> project.
+			</p>
+		</section>
+		
+		<script src="script.js"></script>
+	</body>
+</html>
