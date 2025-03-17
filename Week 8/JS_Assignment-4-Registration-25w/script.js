@@ -35,7 +35,7 @@ window.onload = function () {
             return false;
         }
 
-        // Conditions for Humber ID field (Regex Validation)
+        // Regex Validation for Humber ID
         var humberIDRegex = /^[nN]\d{8}$/;
         if (!humberIDRegex.test(humberIDField.value)) {
             humberIDField.style.backgroundColor = "Red";
@@ -69,6 +69,6 @@ window.onload = function () {
         resultProgram.innerHTML = programField.options[programField.selectedIndex].text;
         resultProject.innerHTML = projectField.value;
 
-        return false; // Prevent form submission
+        return false;
     }
 };
