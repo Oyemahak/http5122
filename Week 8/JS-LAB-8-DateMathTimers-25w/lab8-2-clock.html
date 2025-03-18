@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<script src="lab8-2-clock.js" ></script> 
+	<meta charset="utf-8" />
+	<title>LAB 8.2 | JS Clock</title>
+	<style>
+	.timeDisplay{font-size: 3em; font-family: monospace;}
+	.digiDisplay {display: inline-block; width: 1em;}
+	#hoursOut {margin-right: -0.5em;}
+	</style>
+</head>
+<body>
+  <h1>JavaScript Clock</h1>
+
+  <div id="calendarBox">
+
+	<!-- OUTPUT TIME VALUES -->
+	<p class="timeDisplay">
+		<span id="hoursOut" class="digiDisplay">00</span>
+		<span id="minsOut" class="digiDisplay">:00</span>
+		<span id="secsOut" class="digiDisplay">:00</span>
+	</p>
+
+	<!-- BUTTON SET -->
+	<input id="btnStart" type="button" value="START"/> 
+	<input id="btnStop" type="button" value="STOP"/>
+
+  </div>
+
+</body>
+</html>

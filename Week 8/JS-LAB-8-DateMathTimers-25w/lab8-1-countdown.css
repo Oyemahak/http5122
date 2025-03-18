@@ -1,0 +1,24 @@
+/*JavaScript Lab 8.1 Final Countdown!*/
+body{position: relative;}
+
+#ex14Bod{
+	background: #eeeeee;
+}
+#calendarBox{
+	background: #fccf9f;
+	padding: 10px;
+	margin: 10px;
+}
+.timeOut{
+	background: #FF0000;
+	color: white;
+	width: 50%;
+	padding: 20px;
+	font: 18px/1.5em monospace;
+	margin-left: 20px;
+}
+.timeDisplay{
+	background: white;
+	font-size: 3em;
+	width: 250px;
+}
