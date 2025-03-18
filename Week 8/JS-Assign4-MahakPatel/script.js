@@ -64,10 +64,24 @@ window.onload = function () {
 
         // Customize result message with user data
         resultFname.innerHTML = firstNameField.value;
+        resultFname.style.fontWeight = "700";
+        resultFname.style.textTransform = "uppercase";
+
         resultLname.innerHTML = lastNameField.value;
+        resultLname.style.fontWeight = "700";
+        resultLname.style.textTransform = "uppercase";
+
         resultID.innerHTML = humberIDField.value;
+        resultID.style.fontWeight = "700";
+        resultID.style.textTransform = "uppercase";
+
         resultProgram.innerHTML = programField.options[programField.selectedIndex].text;
+        resultProgram.style.fontWeight = "700";
+        resultProgram.style.textTransform = "uppercase";
+
         resultProject.innerHTML = projectField.value;
+        resultProject.style.fontWeight = "700";
+        resultProject.style.textTransform = "uppercase";
 
         return false;
     }
