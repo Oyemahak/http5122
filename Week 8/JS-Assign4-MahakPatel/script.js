@@ -25,6 +25,7 @@ window.onload = function () {
         var projectField = formHandle.f__project;
 
         // Reset background colors for all fields
+        // Clears previous error highlights messages before checking the form again for better UX
         firstNameField.style.backgroundColor = "";
         lastNameField.style.backgroundColor = "";
         humberIDField.style.backgroundColor = "";
