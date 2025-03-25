@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Storing Data</title>
+	<style>body{background:#c0c0c0;}</style>
+</head>
+
+<body>
+	<h1>Customizable Interface</h1>
+
+<!-- WELCOME BOX -->
+	<div id="output">
+		<h2 id="newMsgBox">Welcome!</h2>
+		<nav>
+			<ul>
+				<li><a href="lab9.html">HOME</a></li>
+				<li><a href="product.html">PRODUCTS</a></li>
+			</ul>
+		</nav>
+	</div>
+
+<!--USER PREFERENCES FORM-->
+	<form name="infoForm" action="#" method="get">
+		<fieldset>
+			<legend>Customize Your Experience</legend>
+		
+			<!--GET USER NAME-->
+			<p>
+				<label for="inName" >What is your name?</label>
+				<input type="text" id="inName" name="f_name"/>
+			</p>
+		
+			<!-- GET COLOUR-->
+			<p>
+				<label for="inColour" >What is your favourite colour? </label>
+				<input type="color" id="inColour" name="f_colour" />
+			</p>
+			
+			<p>
+				<input type="submit" value="Click to save" />
+			</p>
+		</fieldset>
+	</form>
+
+<!--DELETE COOKIES-->
+	<p><input type="button" id="btnDel" value="Delete your Stored Information" /></p>
+
+<script src="lab9.js"></script>
+</body>
+</html>
