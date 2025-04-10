@@ -1,0 +1,49 @@
+/*== LAB 10: jQuery ==*/
+body{
+	background: tan;
+}
+
+h1{
+	margin-left: 150px;
+}
+
+h2{
+	margin-bottom: 2px;
+	padding: 3px 0 2px 25px;
+	background: #D99E50;
+}
+
+p{
+	margin-top: 0;
+	padding-top: 0;
+}
+
+#mainContain {
+	background: #523C1E;
+	width: 80%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.contentBox{
+	background: #524737;/*Paragraph background color*/
+	padding: 15px;
+	color: #FFE5C3;/*Paragraph font colour*/
+}
+
+/*Text Panel Styling*/
+.panelContainer{
+	background: #523C1E;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.textHovered {
+    background: #FFE5C3;
+    color: #524737;
+}
+
+.active-row {
+    background: rgb(7, 0, 139) !important;
+    color: rgb(13, 13, 13) !important;
+}

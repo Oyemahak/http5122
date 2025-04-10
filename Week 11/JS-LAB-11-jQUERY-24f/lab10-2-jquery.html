@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+
+<!--ADD jQUERY FIRST!--><script src="jquery-3.7.1.js"></script>   
+
+    
+    <script src="lab10-2-jquery.js" ></script>
+    
+	<style>
+        table{border:1px solid;}
+        td{text-align:center; padding:3px;}
+        th{background:#313140; color:white;}
+        tr{background: white; color:black;}
+        .selected{background:red; color:white;}
+    </style>
+    
+	<meta charset="utf-8" />
+	<title>jQuery Inventory</title>
+</head>
+<body>
+	<h1 id="headTitle">Parts In Stock</h1>
+
+	<!-- INVENTORY TABLE -->
+	<table id="tblInventory">
+		<caption>Product Inventory</caption>
+		<thead>
+			<tr><th>UPC</th><th>Name</th><th>Quantity</th><th>Description</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+			    <td>987456</td><td>Product Blanks</td><td>345</td><td class="desc">Unfinished template for parts 1000222 to 1000299</td>
+			</tr>
+			<tr>
+			    <td>654123</td><td>Threaded Rods</td><td>211</td><td class="desc">Rods threaded at both ends for Support Brackets</td>
+			</tr>
+			<tr>
+			    <td>321789</td><td>Flange Plates</td><td>87</td><td class="desc">Interface for product blank and threaded rod</td>
+			</tr>
+			<tr>
+			    <td>258963</td><td>Flange Plate Bolts</td><td>556</td><td class="desc">1/2" bolts to secure blanks to flange plates</td>
+			</tr>
+			<tr>
+			    <td>198753</td><td>Support Brackets</td><td>11</td><td class="desc">4' lengths to secure flange plates</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
