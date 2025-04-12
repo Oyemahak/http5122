@@ -48,14 +48,14 @@ window.onload = function(){
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
-                    // Success - process the data
+                    // Success - process data here
                     var DATA = xhr.response;
                     
-                    // Update DOM with weather data
+                    // Update the DOM with weather data
                     locationElement.textContent = DATA.name;
                     temperatureElement.innerHTML = Math.round(DATA.main.temp) + "&deg;C &#x1F321;";
                     
-                    // Format conditions description
+                    // Format all conditions description
                     var conditions = DATA.weather[0].description;
                     conditions = conditions.charAt(0).toUpperCase() + conditions.slice(1);
                     conditions = conditions +'.';
@@ -66,7 +66,7 @@ window.onload = function(){
                     iconElement.innerHTML = "<img src='https://openweathermap.org/img/wn/" + iconCode + ".png' " +
                                           "alt='" + DATA.weather[0].main + " weather icon'>";
                     
-                    // Add humidity data (5th property)
+                    // Add humidity data (5th property we added in our html)
                     humidityElement.textContent = DATA.main.humidity;
                     
                 } else {
