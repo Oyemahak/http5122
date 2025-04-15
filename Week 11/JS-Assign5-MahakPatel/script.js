@@ -19,17 +19,17 @@ window.onload = function(){
     
     // Add event listeners to city buttons
     document.getElementById("Toronto").addEventListener("click", function() {
-        getWeatherDATA("Toronto");
+        getWeatherdata("Toronto");
     });
     
     document.getElementById("Navsari").addEventListener("click", function() {
-        getWeatherDATA("Navsari");
+        getWeatherdata("Navsari");
     });
     
     // Gets live weather for a city and updates the page
     // city - name like "Toronto" or "Navsari"
 
-    function getWeatherDATA(city) {
+    function getWeatherdata(city) {
         // Show output section
         outputSection.style.display = "block";
         
@@ -49,25 +49,25 @@ window.onload = function(){
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     // Success - process data here
-                    var DATA = xhr.response;
+                    var data = xhr.response;
                     
                     // Update the DOM with weather data
-                    locationElement.textContent = DATA.name;
-                    temperatureElement.innerHTML = Math.round(DATA.main.temp) + "&deg;C &#x1F321;";
+                    locationElement.textContent = data.name;
+                    temperatureElement.innerHTML = Math.round(data.main.temp) + "&deg;C &#x1F321;";
                     
                     // Format all conditions description
-                    var conditions = DATA.weather[0].description;
+                    var conditions = data.weather[0].description;
                     conditions = conditions.charAt(0).toUpperCase() + conditions.slice(1);
                     conditions = conditions +'.';
                     conditionsElement.textContent = conditions;
                     
-                    // Add weather icon with dynamic alt text
-                    var iconCode = DATA.weather[0].icon;
+                    // Show weather icon (with alt text for accessibility)
+                    var iconCode = data.weather[0].icon;
                     iconElement.innerHTML = "<img src='https://openweathermap.org/img/wn/" + iconCode + ".png' " +
-                                          "alt='" + DATA.weather[0].main + " weather icon'>";
+                                          "alt='" + data.weather[0].main + " weather icon'>";
                     
-                    // Add humidity data (5th property we added in our html)
-                    humidityElement.textContent = DATA.main.humidity;
+                    // Fifth property: Humidity (rubric requirement 3.e)
+                    humidityElement.textContent = data.main.humidity;
                     
                 } else {
                     // Handle API error
@@ -79,7 +79,7 @@ window.onload = function(){
         
         // Handle network errors
         xhr.onerror = function() {
-            errorElement.textContent = "Network error occurred. Please check your connection.";
+            errorElement.textContent = "Network problem. Please check your connection.";
         };
     }
 };
