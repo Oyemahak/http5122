@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>SVG Lab</title>
+	<script src="Lab-12-svg.js"></script>
+</head>
+
+<body id="svgBody">
+
+	<div id="svgDiv">
+
+		<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<!--ALL OF YOUR SVG ELEMENTS GO HERE INSIDE THE <svg PARENT ELEMENT.-->
+				<rect id="sky" width="300" height="200" fill="lightblue" />
+    
+				<circle id="sun" cx="150" cy="50" r="20" fill="gold" stroke="orange" stroke-width="2" />
+				
+				<rect x="0" y="150" width="300" height="50" fill="green" />
+				
+				<rect x="50" y="130" width="15" height="50" fill="saddlebrown" />
+				<circle cx="57" cy="110" r="25" fill="forestgreen" />
+
+			<!-- UNCOMMENT THE LINES BELOW TO SEE HOW I USED THE <pattern> SVG ELEMENT WITH A SQUARE TO CREATE A 10px by 10px
+				GRID OVERLAY TO MAKE LOCATING COORDINATES EASIER WHILE I CREATED THE GRAPHIC.
+				<pattern id="dotGrid" patternUnits="userSpaceOnUse" x="0" y="0" width="10" height="10">
+					<rect width="10" height="10" stroke="black" fill="none" />
+				</pattern>
+				<rect width="300" height="300" fill="url(#dotGrid)" /> -->
+
+
+		</svg>
+
+	</div>
+</body>
+
+</html>
